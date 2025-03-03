@@ -54,13 +54,7 @@ module.exports = fp(
           noAck: false,
         },
         async (msg) => {
-          try {
-            fastify.log.info(
-              `Received message: ${JSON.stringify(msg, null, 2)}`
-            );
-          } catch (error) {
-            fastify.log.error(`Error processing message: ${error.message}`);
-          }
+          fastify.log.info(`Received message: ${JSON.stringify(msg, null, 2)}`);
         }
       );
 
